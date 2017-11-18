@@ -1,0 +1,12 @@
+{% extends "blogtemplates/header.html" %}
+{% block content %}
+<hr>
+<span class="display-4"> {{post.title}}</span>
+<div class="lead">
+    {{post.body |  safe | linebreaks}}
+On {{post.created}}
+</div>
+
+{% load staticfiles %}
+<script src="{% static 'js/main.js' %}" ></script>
+{% endblock %}

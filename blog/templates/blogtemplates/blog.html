@@ -1,0 +1,46 @@
+{% extends "blogtemplates/header.html" %}
+{% block content %}
+{% if posts %}
+  {% for post in posts %}
+      <hr>
+  <div class="pos-f-t">
+    <div class="collapse" id="{{post.id}}">
+      <div class="bg-dark p-4">
+        <h4 class="text-white"><a  href="/blog/{{post.id}}">{{post.title}}</a> </h4>
+        <span class="text-muted"><h6><hr>{% if post.body|length > 200 %}{{post.body | slice:":200"}}... <a  href="/blog/{{post.id}}">read post</a>{% else  %}{{post.body}}{% endif %} </span></h6>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <button style="border:0px;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#{{post.id}}" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+         <span >{% if post.title|length > 100 %}{{post.title| slice:":100"}} ...{% else  %}{{post.title}}{% endif %}</span>   
+      </button>
+      <hr>
+      <span class="badge badge-light">Posted by: {{post.user}} {{post.created |timesince}} ago</span>
+    </nav>
+  </div>
+  {%endfor%}
+  {% if is_paginated %}
+        <nav aria-label="Page navigation example" style="margin-top: 2%;">
+      <ul class="pagination justify-content-center pagination-lg">
+          {% if page_obj.has_previous %}
+              <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+          {% endif %}
+          {% for pg in page_obj.paginator.page_range %}
+              {% if page_obj.number == pg %}
+                  <li class="page-item active"><a class="page-link" href="?page={{ pg }}">{{ pg }}</a></li>
+              {% else %}
+                  <li class="page-item"><a class="page-link" href="?page={{ pg }}">{{ pg }}</a></li>
+              {% endif %}
+          {% endfor %}
+          {% if page_obj.has_next %}
+              <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+          {% endif %}
+      </ul>
+    </nav>
+    {% endif %}
+{%else%}
+Sorry, there is no post available!
+{%endif%}
+
+{% endblock %}
