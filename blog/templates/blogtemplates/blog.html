@@ -6,8 +6,9 @@
   <div class="pos-f-t">
     <div class="collapse" id="{{post.id}}">
       <div class="bg-dark p-4">
-        <h4 class="text-white"><a  href="/blog/{{post.id}}">{{post.title}}</a> </h4>
-        <span class="text-muted"><h6><hr>{% if post.body|length > 200 %}{{post.body | slice:":200"}}... <a  href="/blog/{{post.id}}">read post</a>{% else  %}{{post.body}}{% endif %} </span></h6>
+        {{get_absolute_url}}
+        <h4 class="text-white"><a  href="{{post.get_absolute_url}}">{{post.title}}</a> </h4>
+        <span class="text-muted"><h6><hr>{% if post.body|length > 200 %}{{post.body | slice:":200"}}... <a  href="{{post.get_absolute_url}}">read post</a>{% else  %}{{post.body}}{% endif %} </span></h6>
       </div>
     </div>
     <nav class="navbar navbar-dark bg-dark">

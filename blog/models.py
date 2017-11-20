@@ -37,6 +37,9 @@ class Post(models.Model):
     post = models.ManyToManyField(Categories)
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return "/blog/%s" %(self.id) 
 
     class meta:
         verbose_name = "Blog Entry"

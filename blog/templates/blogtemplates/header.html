@@ -11,9 +11,21 @@ Technology Notion
 <link rel ='stylesheet' href="{% static 'css/main.css' %}" type="text/css" />
 <link rel="stylesheet"  href="{% static 'css/font-awesome.min.css' %}" type="text/css">
 <link rel="stylesheet"  href="{% static 'css/bootstrap-social.css' %}" type="text/css">
+
 </head>
 
 <body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=1173607389452635';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
     <nav class="nav top-background" >
             <div class="col-md-2">
                  <img src = "{%static 'img/websitelogo.png'%}">
@@ -22,15 +34,15 @@ Technology Notion
                 <a class="nav-link lead" href="#">Tigers of wrath are wiser than the horses of instruction</a>
             </div>
             <div class="col-md-6 offset-md-1" style="margin-top: 5px;">
-                <a class="btn btn-social btn-pinterest" href="www.twitter.com">
+                <a class="btn btn-social btn-pinterest" target="_blank" href="https://www.twitter.com">
                     <span class="fa fa-youtube"></span> Subscribe us on Youtube
                 </a>
             
-                <a class="btn btn-social btn-twitter" href="www.twitter.com">
+                <a class="btn btn-social btn-twitter" target="_blank" href="https://www.twitter.com">
                     <span class="fa fa-twitter"></span> Visit Us at Twitter
                 </a>
                 
-                <a class="btn btn-social  btn-facebook"  href="www.facebook.com">
+                <a class="btn btn-social  btn-facebook" target="_blank"  href="https://www.facebook.com/Tec-Notions-137505043573476/">
                     <span class="fa fa-facebook"></span> Visit Us at Facebook
                 </a>
             </div>  
@@ -38,13 +50,13 @@ Technology Notion
 <div class="jumbotron background-gradient" >
    
   <h1 class="display-5">Welcome to TEC NOTIONS</h1>
-  <p class="lead">We explain the complex concepts in an easy way within 300 words, that must make a smile :)</p>
+  <p class="lead">We explain the complex concepts in an easy way within 300 words, that must makes a smile :)</p>
   
 </div>
 <div class="col-md-12">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">TEC NOTIONS</a>
+  <a class="navbar-brand"  href="#">TEC NOTIONS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -53,8 +65,12 @@ Technology Notion
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item" id="categories">
-        <a class="nav-link" id="categories" href="#">Categories</a>
+      <li class="nav-item">
+        <select class="nav-link bg-dark" id="categories" style="border: 0px; " id="" >
+          {%for category in categories%}
+          <option id= {{category.id}} value= {{category.name}}> {{category.name}}  </option>
+          {%endfor%}
+        </select>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">What is Technotion?</a>
@@ -86,24 +102,26 @@ Technology Notion
             Copyrights 	&copy 2017 Tecnotions, All Rights Reserved
         </div>
         <div class="col-md-2 offset-md-1">
-            <a class="btn btn-social-icon btn-facebook">
+            <a class="btn btn-social-icon btn-facebook" target="_blank" href="https://www.facebook.com/Tec-Notions-137505043573476/">
                 <span class="fa fa-facebook fa-4x"></span>
             </a>
-            <a class="btn btn-social-icon btn-reddit">
+            <a class="btn btn-social-icon btn-reddit" target="_blank" href="https://www.reddit.com">
                 <span class="fa fa-reddit fa-4x"></span>
             </a>
-            <a class="btn btn-social-icon btn-twitter">
+            <a class="btn btn-social-icon btn-twitter" target="_blank" href="https://www.twitter.com">
                 <span class="fa fa-twitter fa-4x"></span>
             </a>
-            <a class="btn btn-social-icon btn-pinterest">
+            <a class="btn btn-social-icon btn-pinterest" target="_blank" href="https://www.pinterest.com">
                 <span class="fa fa-youtube fa-4x"></span>
             </a>
         </div>
     </div>
 </footer>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script src="https://use.fontawesome.com/ec5c7641f5.js"></script>
+{% load staticfiles %}
+<script src= "{% static 'js/main.js'%}"></script>
 </body>
 </html>

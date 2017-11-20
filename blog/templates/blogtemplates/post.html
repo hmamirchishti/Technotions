@@ -5,8 +5,20 @@
 <div class="lead">
     {{post.body |  safe | linebreaks}}
 On {{post.created}}
-</div>
 
+</div>
+<div class="fb-like" data-href="{{request.build_absolute_url}}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+<a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_url}}">
+Share on Facebook
+</a>
+<a href="https://twitter.com/home?status={{request.build_absolute_url}}/">
+Share on Twitter
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{request.build_absolute_url}}/&title=&source={{request.build_absolute_url}}">
+Share on Linkedin
+</a>
+<a href="http://www.reddit.com/submit?url={{request.build_absolute_url}}/&title=">Share on Reddit</a>
+<div class="fb-comments" data-href="{{request.build_absolute_url}}" data-numposts="5"></div>
 {% load staticfiles %}
 <script src="{% static 'js/main.js' %}" ></script>
 {% endblock %}
