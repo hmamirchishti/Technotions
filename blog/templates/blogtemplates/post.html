@@ -1,15 +1,60 @@
 {% extends "blogtemplates/header.html" %}
 {% block content %}
-<hr>
-<span class="display-4"> {{post.title}}</span>
-<div class="lead">
-    {{post.body |  safe | linebreaks}}
-On {{post.created}}
+<h1 class="mt-4">{{post.title}}</h1>
+<!-- Author -->
+          <p class="lead">
+            by
+            <a href="#">{{post.user}}</a>
+          </p>
+          
+          <hr>
+          <!-- Date/Time -->
+          <p>Posted on {{post.created}}</p>
+          <hr>
+          <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+          <hr>
+          {{post.body |  safe | linebreaks}}
+          
+<!--
+<!-- Single Comment 
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Commenter Name</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </div>
 
-</div>
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Commenter Name</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+              <div class="media mt-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                  <h5 class="mt-0">Commenter Name</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+
+              <div class="media mt-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                  <h5 class="mt-0">Commenter Name</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+
+            </div>
+          </div>
+         -->
 <div class="fb-like" data-href="{{request.build_absolute_url}}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+<hr>
 <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_url}}">
 Share on Facebook
+
 </a>
 <a href="https://twitter.com/home?status={{request.build_absolute_url}}/">
 Share on Twitter

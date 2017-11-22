@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
         'markdownx',
+        'FirstPageApp',
         'blog',
     'django_extensions',
     'django.contrib.admin',

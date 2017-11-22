@@ -34,12 +34,12 @@ class Post(models.Model):
     modified = models.DateTimeField(auto_now=True)    
     objects = EntryQuerySet.as_manager()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    post = models.ManyToManyField(Categories)
+    category = models.ManyToManyField(Categories)
     def __str__(self):
         return self.title
     
     def get_absolute_url(self):
-        return "/blog/%s" %(self.id) 
+        return "/blog/posts/%s" %(self.id) 
 
     class meta:
         verbose_name = "Blog Entry"
