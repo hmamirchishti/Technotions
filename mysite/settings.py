@@ -34,6 +34,7 @@ INSTALLED_APPS = [
         'markdownx',
         'FirstPageApp',
         'blog',
+        'portfolio',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',

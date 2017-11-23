@@ -16,10 +16,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from blog import urls as blog
 from FirstPageApp import urls as FirstPageApp
+from portfolio import urls as Portfolio
 from markdownx import urls as markdownx
 urlpatterns = [
     url(r'^$',include(FirstPageApp)),
     url(r'^blog/',include(blog)),
+    url(r'^portfolio$',include(Portfolio)),
     url(r'^markdownx/', include(markdownx)),
     url(r'^admin/', include(admin.site.urls)),
 ]

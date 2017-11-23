@@ -1,0 +1,71 @@
+
+.img-gif-hight {
+    width: 35%;
+    height: 60px;
+    position: relative;
+}
+body {
+    margin-top: 1%
+
+}
+.btn-outline-white {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 18px 24px;
+    font-size: inherit;
+    font-weight: 500;
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+    border-color: rgba(255,255,255,0.5);
+    transition: all .1s ease-in-out;
+}
+.bk-gnd-img{
+  background-image: url('./../img/home-bg.jpg');
+}
+footer {
+    margin-top: 3%;
+    height: 50px;
+}
+footer > div > div > a {
+    margin-left: 5%;
+    margin-top: 3%;
+}
+nav > button:hover {
+    color: white !important;
+    cursor:pointer;
+}
+.top-background{
+    background: rgb(252,252,252);
+    background: -moz-linear-gradient(left, rgba(252,252,252,1) 30%, rgba(52,58,64,1)) 94%);
+    background: -webkit-linear-gradient(left, rgba(252,252,252,1) 30%,rgba(52,58,64,1) 94%);
+    background: linear-gradient(to right, rgba(252,252,252,1) 30%,rgba(52,58,64,1) 94%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#343a40',GradientType=1 );
+  }
+  * {
+    font-family: "Verdana";
+    font-size: 14px;
+}
+  #wrapper {
+    position: relative;
+    /*border: 1px solid #bbb;*/
+    float: left;
+}
+#wrapper:hover ul {
+    display: block;
+}
+  #wrapper ul{
+    cursor: pointer;
+    display: none;  
+    position: absolute;
+    width: 100%;
+    top: auto;
+  }
+  #wrapper ul li{
+    cursor: pointer;
+    padding: 5px 10px;
+    list-style: none;
+  }
+  #wrapper ul li:hover{
+     background-color: #cef;
+  }
