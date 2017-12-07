@@ -13,6 +13,10 @@ urlpatterns = [
 #        )),
     url(r'^$', views.posts),
     url(r'^posts/(?P<pk>\d+)$',DetailView.as_view(model = Post, template_name="blogtemplates/post.html")),
-    url(r'^get_categories$', views.get_categories)
+   # url(r'^get_categories$', views.get_categories)
+    url(r'about$', views.about),
+    url(r'authers$', views.authers),
+    url(r'contact$', views.contact)
+
    #TODO add url for category
 ]

@@ -1,20 +1,19 @@
-{% extends "blogtemplates/header.html" %}
-{% block content %}
+{% extends "blogtemplates/header.html" %} {% block content %}
 <h1 class="mt-4">{{post.title}}</h1>
 <!-- Author -->
-          <p class="lead">
-            by
-            <a href="#">{{post.user}}</a>
-          </p>
-          
-          <hr>
-          <!-- Date/Time -->
-          <p>Posted on {{post.created}}</p>
-          <hr>
-          <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
-          <hr>
-          {{post.body |  safe | linebreaks}}
-          
+<p class="lead">
+    by
+    <a href="#">{{post.user}}</a>
+</p>
+
+<hr>
+<!-- Date/Time -->
+<p>Posted on {{post.created}}</p>
+<hr> {% if post.image %}
+<img class="card-img-top" src="{{post.image.url}}" alt="Card image cap"> {%else%}
+<img class="card-img-top" src="http://placehold.it/750x300" s alt="Card image cap"> {%endif%}
+<hr> {{post.body | safe | linebreaks}}
+
 <!--
 <!-- Single Comment 
           <div class="media mb-4">
@@ -65,5 +64,5 @@ Share on Linkedin
 <a href="http://www.reddit.com/submit?url={{request.build_absolute_url}}/&title=">Share on Reddit</a>
 <div class="fb-comments" data-href="{{request.build_absolute_url}}" data-numposts="5"></div>
 {% load staticfiles %}
-<script src="{% static 'js/main.js' %}" ></script>
+<script src="{% static 'js/main.js' %}"></script>
 {% endblock %}

@@ -18,6 +18,8 @@ from blog import urls as blog
 from FirstPageApp import urls as FirstPageApp
 from portfolio import urls as Portfolio
 from markdownx import urls as markdownx
+from django.conf    import settings
+from django.conf.urls.static    import static
 urlpatterns = [
     url(r'^$',include(FirstPageApp)),
     url(r'^blog/',include(blog)),
@@ -25,3 +27,6 @@ urlpatterns = [
     url(r'^markdownx/', include(markdownx)),
     url(r'^admin/', include(admin.site.urls)),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

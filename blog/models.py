@@ -21,10 +21,12 @@ class User(models.Model):
 class EntryQuerySet(models.QuerySet):
     def Published(self):
         return self.filter(published = True)
+
 class Categories(models.Model):
     name = models.CharField(max_length=50)
     def __str__(self):
         return self.name
+
 class Post(models.Model):
     title = models.CharField(max_length=200)
     body = models.TextField()
@@ -33,8 +35,9 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add= True)
     modified = models.DateTimeField(auto_now=True)    
     objects = EntryQuerySet.as_manager()
+    image = models.FileField(null=True, blank=True) 
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    category = models.ManyToManyField(Categories)
+    categories = models.ManyToManyField(Categories)
     def __str__(self):
         return self.title
     
