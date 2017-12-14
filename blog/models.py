@@ -26,6 +26,9 @@ class Categories(models.Model):
     name = models.CharField(max_length=50)
     def __str__(self):
         return self.name
+    class Meta:
+        db_table = 'blog_categories'
+        verbose_name_plural ='blog_Categories'
 
 class Post(models.Model):
     title = models.CharField(max_length=200)

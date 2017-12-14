@@ -25,6 +25,7 @@ SECRET_KEY = 'cr-9!73bw)6&tg4$d!q+9h3#l6z7p9vgf3&zg2!x#r*r)6=l_0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -35,6 +36,7 @@ INSTALLED_APPS = [
         'FirstPageApp',
         'blog',
         'portfolio',
+        'ecomstore',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -131,3 +133,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+SITE_NAME = 'MODERN SHIRTS'
+META_KEYWORDS = 'MODERN SHIRTS, TEE SHIRTS, SHIRTS, FANCY SHIRTS'
+META_DESCRIPTION = 'MODERN SHIRTS'

@@ -20,10 +20,12 @@ from portfolio import urls as Portfolio
 from markdownx import urls as markdownx
 from django.conf    import settings
 from django.conf.urls.static    import static
+from ecomstore import urls as ecomstore
 urlpatterns = [
-    url(r'^$',include(FirstPageApp)),
+    url(r'^',include(FirstPageApp)),
     url(r'^blog/',include(blog)),
-    url(r'^portfolio$',include(Portfolio)),
+    url(r'^ecomstore',include(ecomstore)),
+    url(r'^portfolio',include(Portfolio)),
     url(r'^markdownx/', include(markdownx)),
     url(r'^admin/', admin.site.urls),
 ]
