@@ -1,7 +1,7 @@
-from django.urls import urls, include
+from django.conf.urls import url, include
 from . import views
 
-urlpatterns =[
+urlpatterns = [
     #Todo Need to put views
     url(r'^$',views.index),
     url(r'^category/(?P<category_slug>[-\w]+>)/$',views.category),

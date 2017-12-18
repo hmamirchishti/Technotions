@@ -24,7 +24,7 @@ from ecomstore import urls as ecomstore
 urlpatterns = [
     url(r'^',include(FirstPageApp)),
     url(r'^blog/',include(blog)),
-    url(r'^ecomstore',include(ecomstore)),
+    url(r'^ecomstore/',include(ecomstore)),
     url(r'^portfolio',include(Portfolio)),
     url(r'^markdownx/', include(markdownx)),
     url(r'^admin/', admin.site.urls),
